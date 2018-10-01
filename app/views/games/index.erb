@@ -1,0 +1,6 @@
+All games currently being played: <br>
+<% @games.each do |game| %>
+<%= link_to game.user.name+" versus "+game.boss.name, game_path(game) %><br>
+Playing as: <%= game.user.player.name %>
+<% end %><br><br>
+<%= button_to "Start a new game", new_user_path, method: :get %>

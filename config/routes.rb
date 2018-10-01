@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   # resources :player_phrases
   resources :players, only: :show
   # resources :hands
-  resources :card_libraries, only: :show
+  resources :card_libraries, only: [:show, :index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,8 @@
+Show page for <%= @user.name %><br>
+Playing as: <%= @user.player.name %><br><br>
+
+Currently playing:<br>
+<% @user.games.each do |game| %>
+<%= link_to "versus #{game.boss.name}", game_path(game) %>
+<% end %><br><br>
+<%= button_to "Start a new game", new_user_path %>

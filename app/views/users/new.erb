@@ -1,0 +1,5 @@
+<%= form_for @user do |f| %>
+<%= f.label "Select a player" %><br>
+<%= f.select :player_id, @player_options %><br>
+<%= f.submit "Start game!" %>
+<% end %>
