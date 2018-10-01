@@ -34,7 +34,7 @@ class GamesController < ApplicationController
     end
     @game.save
 
-    if action_params[:quantity] == 1
+    if action_params[:quantity] == "1"
       Hand.find_by(id: action_params[:hand_id]).destroy
       User.find_by(id: @game.user_id).hands << Hand.create(user_id: @game.user_id, card_library_id: rand(1..CardLibrary.all.size), quantity: 1)
     else
