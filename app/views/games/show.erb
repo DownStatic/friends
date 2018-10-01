@@ -1,6 +1,6 @@
 <%= @game.user.player.name %> versus <%= @game.boss.name %><br>
-<%= @game.user.player.name %>: <%= @game.user_health %> health<br>
-<%= @game.boss.name %>: <%= @game.boss_health %> health<br><br>
+<%= @game.user.player.name %>: <%= @game.user_health %> health | <%= flash[:player_phrase] ? flash[:player_phrase] : nil %><br>
+<%= @game.boss.name %>: <%= @game.boss_health %> health | <%= flash[:boss_phrase] ? flash[:boss_phrase] : nil %> <br><br>
 Available Cards:<br>
 <ul>
 <% @game.user.hands.each do |hand| %>

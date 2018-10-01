@@ -25,13 +25,24 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find_by(id: params[:id])
-    byebug
     #Logic for action resolution here
     if action_params[:effect_type] == "Attack"
       @game.boss_health -= action_params[:power].to_i
     elsif action_params[:effect_type] == "Heal"
       @game.user_health += action_params[:power].to_i
     end
+    flash[:player_phrase] = @game.user.player.random_phrase(action_params[:effect_type])
+    byebug
+    #Boss logic
+    #picks a random entry from BPh table
+    #takes effects on player/boss health attributes based on effect_type
+    @boss_action = Boss.find_by(id: @game.boss_id).pick_action
+    if @boss_action.effect_type == "Attack"
+      @game.user_health -= @boss_action.potency.to_i
+    elsif @boss_action.effect_type == "Heal"
+      @game.boss_health += @boss_action.potency.to_i
+    end
+    flash[:boss_phrase] = @boss_action.phrase
     @game.save
 
     if action_params[:quantity] == "1"
