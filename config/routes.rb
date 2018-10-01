@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users, except: :destroy
-  resources :games, except: :update
+  resources :games
   resources :bosses, only: :show
   # resources :boss_phrases
   # resources :player_phrases

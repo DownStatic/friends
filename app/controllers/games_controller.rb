@@ -23,11 +23,24 @@ class GamesController < ApplicationController
     end
   end
 
+  def update
+    @game = Game.find_by(id: params[:id])
+    byebug
+    redirect_to @game
+  end
+
   def destroy
     @game = Game.find_by(id: params[:id])
     @user = @game.user
     @game.destroy
     redirect_to @user
+  end
+
+
+  private
+
+  def game_params
+    params.require(:game).require(:user_health, :boss_health, :user_id, :boss_id, :image, :bosses_defeated)
   end
 
 end

@@ -1,1 +1,15 @@
-<%= @game.user.name %> versus <%= @game.boss.name %>
+<%= @game.user.player.name %> versus <%= @game.boss.name %><br>
+<%= @game.user.player.name %>: <%= @game.user_health %> health<br>
+<%= @game.boss.name %>: <%= @game.boss_health %> health<br><br>
+Available Cards:<br>
+<ul>
+<% @game.user.hands.each do |hand| %>
+<%= form_for :hand do |f| %>
+<%= f.hidden_field :effect_type, value: hand.card_library.effect_type %>
+<%= f.hidden_field :power, value: hand.card_library.power %>
+<%= f.hidden_field :hand_id, value: hand.id %>
+<%= f.hidden_field :quantity, value: hand.quantity %>
+<%= button_to hand.card_library.name, game_path(@game), method: :patch %><br>
+<% end %>
+<% end %>
+</ul>
