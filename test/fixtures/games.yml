@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  boss_id: 1
+  user_health: 1
+  boss_health: 1
+  image: MyString
+  bosses_defeated: 1
+
+two:
+  user_id: 1
+  boss_id: 1
+  user_health: 1
+  boss_health: 1
+  image: MyString
+  bosses_defeated: 1

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  boss_id: 1
+  phrase: MyString
+  effect_type: MyString
+
+two:
+  boss_id: 1
+  phrase: MyString
+  effect_type: MyString

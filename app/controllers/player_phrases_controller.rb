@@ -1,0 +1,2 @@
+class PlayerPhrasesController < ApplicationController
+end

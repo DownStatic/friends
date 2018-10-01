@@ -1,0 +1,2 @@
+class BossPhrasesController < ApplicationController
+end
