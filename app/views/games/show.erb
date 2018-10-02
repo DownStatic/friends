@@ -1,8 +1,10 @@
 <div class="show">
+  <section>
 <%= @game.user.player.name %> versus <%= @game.boss.name %><br>
 <%= @game.user.player.name %>: <%= @game.user_health %> health | <%= flash[:player_phrase] ? flash[:player_phrase] : nil %><br>
 <%= @game.boss.name %>: <%= @game.boss_health %> health | <%= flash[:boss_phrase] ? flash[:boss_phrase] : nil %> <br><br>
-Available Cards:<br><br><br>
+</section>
+<br><br><br>
 <p>
   <div class="deck">
 <% @game.user.hands.each do |hand| %>
