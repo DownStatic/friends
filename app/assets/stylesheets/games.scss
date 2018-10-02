@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-
+.show{
 * {
   box-sizing: border-box;
 }
@@ -72,6 +72,19 @@ input[type="button"] {
   width: 100px;
   height: 45px;
   padding: 5px;
+  outline: 0;
+  cursor: pointer;
+  @include rounded(5px);
+}
+
+input[type="submit"] {
+  background: none;
+  border: none;
+  color: white;
+  text-transform: capitalize;
+  width: 210px;
+  height: 330px;
+  padding: 0px;
   outline: 0;
   cursor: pointer;
   @include rounded(5px);
@@ -238,4 +251,5 @@ input.discard {
   100% {
     transform: scale(.98, .98) rotateX(0deg) rotateY(0deg) rotateZ(40deg);
   }
+}
 }
