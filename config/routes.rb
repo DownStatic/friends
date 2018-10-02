@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :users, except: :destroy
-  resources :games 
+  get '/games/game_over', to: 'games#game_over', as: 'game_over'
+  resources :games
   resources :bosses, only: :show
   # resources :boss_phrases
   # resources :player_phrases

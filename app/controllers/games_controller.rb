@@ -36,14 +36,17 @@ class GamesController < ApplicationController
     #Check for boss death
     #If dead, increment boss and redirect to new page
     #Logic to determine which boss death screen gets shown
+    @boss_action = Boss.find_by(id: @game.boss_id).pick_action
     if @game.boss_health.to_i <= 0
       @game.boss_id += 1
       @game.boss_health = Boss.find_by(id: @game.boss_id).health
+      @game.bosses_defeated += 1
       @game.save
       flash[:game] = @game.id
       redirect_to boss_path(@game.boss)
+    elsif @boss_action.potency.to_i >= @game.user_health.to_i && @boss_action.effect_type == "Attack"
+      redirect_to game_over_path and return
     else
-      @boss_action = Boss.find_by(id: @game.boss_id).pick_action
       if @boss_action.effect_type == "Attack"
         @game.user_health -= @boss_action.potency.to_i
       elsif @boss_action.effect_type == "Heal"
@@ -65,12 +68,16 @@ class GamesController < ApplicationController
   end
 
   def destroy
+    byebug
     @game = Game.find_by(id: params[:id])
     @user = @game.user
     @game.destroy
     redirect_to @user
   end
 
+  def game_over
+    render :game_over
+  end
 
   private
 
