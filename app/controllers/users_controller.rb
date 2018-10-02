@@ -13,7 +13,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @game = Game.create(user_id: @user.id,boss_id: Boss.all.first.id, bosses_defeated: 0, image: "", user_health: @user.player.health, boss_health: Boss.all.first.health)
-      @hand = Hand.create(user_id: @user.id, card_library_id: rand(1..CardLibrary.all.size), quantity: 1)
+      3.times do
+        @hand = Hand.create(user_id: @user.id, card_library_id: rand(1..CardLibrary.all.size), quantity: 1)
+      end
       redirect_to @game
     else
       flash[:errors] = @user.errors.full_messages

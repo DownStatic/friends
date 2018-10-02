@@ -9,7 +9,7 @@ Available Cards:<br>
 <%= f.hidden_field :power, value: hand.card_library.power %>
 <%= f.hidden_field :hand_id, value: hand.id %>
 <%= f.hidden_field :quantity, value: hand.quantity %>
-<%= button_to hand.card_library.name, game_path(@game), method: :patch %><br>
+<%= button_to hand.card_library.name, game_path(@game), method: :patch %> <br>
 <% end %>
 <% end %>
 </ul>

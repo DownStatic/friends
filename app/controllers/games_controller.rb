@@ -32,7 +32,6 @@ class GamesController < ApplicationController
       @game.user_health += action_params[:power].to_i
     end
     flash[:player_phrase] = @game.user.player.random_phrase(action_params[:effect_type])
-    byebug
     #Boss logic
     #picks a random entry from BPh table
     #takes effects on player/boss health attributes based on effect_type
@@ -42,9 +41,22 @@ class GamesController < ApplicationController
     elsif @boss_action.effect_type == "Heal"
       @game.boss_health += @boss_action.potency.to_i
     end
-    flash[:boss_phrase] = @boss_action.phrase
-    @game.save
 
+
+    #Check for boss death
+    #If dead, increment boss and redirect to new page
+    #Logic to determine which boss death screen gets shown
+    if @game.boss_health.to_i <= 0
+      @game.boss_id += 1
+      @game.boss_health = Boss.find_by(id: @game.boss_id).health
+      @game.save
+      redirect_to story_path
+    else
+      flash[:boss_phrase] = @boss_action.phrase
+      @game.save
+    end
+
+    #refactor here
     if action_params[:quantity] == "1"
       Hand.find_by(id: action_params[:hand_id]).destroy
       User.find_by(id: @game.user_id).hands << Hand.create(user_id: @game.user_id, card_library_id: rand(1..CardLibrary.all.size), quantity: 1)
@@ -52,8 +64,6 @@ class GamesController < ApplicationController
       Hand.find_by(id: action_params[:hand_id]).update(quantity: (action_params[:quantity].to_i-1))
       User.find_by(id: @game.user_id).hands << Hand.create(user_id: @game.user_id, card_library_id: rand(1..CardLibrary.all.size), quantity: 1)
     end
-    #Attack/Heal -> alter related @game values
-    #Update @game object
     redirect_to @game
   end
 
