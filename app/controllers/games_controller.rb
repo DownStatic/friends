@@ -38,13 +38,16 @@ class GamesController < ApplicationController
     #Logic to determine which boss death screen gets shown
 
     # byebug
-    if @game.boss_health.to_i <= 0
+    if @game.boss_health.to_i <= 0 #boss death condition
       @game.boss_id += 1
       if @game.boss_id.to_i == 4
         redirect_to #game_won and return
       end
       @game.boss_health = Boss.find_by(id: @game.boss_id).health
       @game.bosses_defeated += 1
+      if @game.user_health.to_i < 20
+        @game.user_health = 20
+      end
       @game.save
       flash[:game] = @game.id
       redirect_to boss_path(@game.boss) and return

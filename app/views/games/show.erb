@@ -1,7 +1,7 @@
 <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
 <div class="show">
 <section>
-<%= @game.user.player.name %> <span style="color: red"> versus </span><%= @game.boss.name %><br>
+<%= @game.user.player.name %> <span style="color: red"> VS </span><%= @game.boss.name %><br>
 </section>
 <h2 style="font-family: 'Permanent Marker';font-size:200%;">
 <%= @game.user.player.name %>:  <%= @game.user_health %> health | <%= flash[:player_phrase] ? flash[:player_phrase] : nil %><br><br>
