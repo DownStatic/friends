@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def index
+    @players = Player.all
+  end
+
   def show
     @user = User.find_by(id: params[:id])
   end

@@ -1,3 +1,47 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+      font-family: 'ssf4';
+      src: url('fonts/ssf4/ssf4_abuket-webfont.woff2') format('woff2'),
+           url('fonts/ssf4/ssf4_abuket-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  section {
+    font-family: 'ssf4';
+    margin: 3%;
+    font-size: 200%;
+    align: top;
+  }
+
+  h2 {
+    display: block;
+    margin: 3%;
+    align: top;
+    font-family: "Comic Sans";
+    font-size: 150%;
+  }
+
+  h1, h3 {
+    display: block;
+    margin: 10px;
+  }
+
+  h1 {
+    color: #666;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  h3 {
+    color: #888;
+  }
+
+  

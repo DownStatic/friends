@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :players, only: :show
   # resources :hands
   resources :card_libraries, only: [:show, :index]
+  get '/', to: 'game#index', as: 'main'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
