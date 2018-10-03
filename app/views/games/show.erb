@@ -1,15 +1,17 @@
 <div class="show">
-  <section>
-<%= @game.user.player.name %> versus <%= @game.boss.name %><br>
-<%= @game.user.player.name %>: <%= @game.user_health %> health | <%= flash[:player_phrase] ? flash[:player_phrase] : nil %><br>
-<%= @game.boss.name %>: <%= @game.boss_health %> health | <%= flash[:boss_phrase] ? flash[:boss_phrase] : nil %> <br><br>
+<section>
+<%= @game.user.player.name %> <span style="color: red"> versus </span><%= @game.boss.name %><br><br>
 </section>
+<h2>
+<%= @game.user.player.name %>:  <%= @game.user_health %> health | <%= flash[:player_phrase] ? flash[:player_phrase] : nil %><br><br>
+<%= @game.boss.name %>: <%= @game.boss_health %> health | <%= flash[:boss_phrase] ? flash[:boss_phrase] : nil %> <br><br><br>
 <br><br><br>
+</h2>
 <p>
   <div class="deck">
 <% @game.user.hands.each do |hand| %>
   <div class="card card1">
-    <div class="face front">
+    <div class="face front" style="background-image: url(<%= hand.card_library.image %>);">
 <%= form_for :hand do |f| %>
 <%= f.hidden_field :effect_type, value: hand.card_library.effect_type %>
 <%= f.hidden_field :power, value: hand.card_library.power %>

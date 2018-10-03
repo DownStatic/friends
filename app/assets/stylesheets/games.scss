@@ -2,25 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url(https://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+      font-family: 'ssf4';
+      src: url('fonts/ssf4/ssf4_abuket-webfont.woff2') format('woff2'),
+           url('fonts/ssf4/ssf4_abuket-webfont.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
 .show{
 * {
   box-sizing: border-box;
 }
 
-// @font-face {
-//   font-family: 'SSF5';
-//   src: asset-url('SSF4 ABUKET.ttf');
-// }
-//
-// section {
-//   font-family: SSF5;
-// }
+section {
+  font-family: 'ssf4';
+  margin: 3%;
+  font-size: 200%;
+  align: top;
+}
 
 body {
   font-family: "Roboto", sans-serif;
   font-size: 100%;
   height: 100%;
   zoom: 1;
+}
+
+h2 {
+  display: block;
+  margin: 3%;
+  align: top;
+  font-family: "Comic Sans";
+  font-size: 150%;
 }
 
 h1, h3 {
@@ -95,6 +109,7 @@ input[type="submit"] {
   height: 330px;
   padding: 0px;
   outline: 0;
+  opacity: 0;
   cursor: pointer;
   @include rounded(5px);
 }
@@ -162,9 +177,9 @@ input.discard {
   @include rounded(10px);
   box-shadow: 4px 4px 10px #555; /* Slim drop shadow so as not to bleed into the bounding box of the next card  */
 }
-
+//cdn8.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/196319/278380/mtgmagic2011serraangel__93369.1519946337.jpg?c=2&imbypass=on
 .card .front {
-  background: url("https://cdn8.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/196319/278380/mtgmagic2011serraangel__93369.1519946337.jpg?c=2&imbypass=on");
+  background-image: image-url('greencard.png');
   background-size: 210px 330px;
   transform: rotateX(0deg) rotateY(0deg);
   transition: all .4s ease-in-out;
@@ -177,7 +192,7 @@ input.discard {
 }
 
 .card:nth-child(1) {
-  transform: rotateX(0deg) rotateY(0deg) rotateZ(-35deg);
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(-25deg);
   animation: drop2 .5s ease-in;
 }
 
@@ -187,7 +202,7 @@ input.discard {
 }
 
 .card:nth-child(3) {
-  transform: rotateX(0deg) rotateY(0deg) rotateZ(7deg);
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(-11deg);
   animation: drop3 .5s ease-in;
 }
 
