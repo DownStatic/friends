@@ -14,7 +14,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(player_params)
+    flash[:player_phrase] = nil
+    flash[:boss_phrase] = nil 
     if @user.save
       @game = Game.create(user_id: @user.id,boss_id: Boss.all.first.id, bosses_defeated: 0, image: "", user_health: @user.player.health, boss_health: Boss.all.first.health)
       3.times do
@@ -45,6 +47,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:player_id)
+  end
+
+  def player_params
+    params.permit(:player_id)
   end
 
 end

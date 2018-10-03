@@ -1,7 +1,7 @@
 puts "seeding players"
-Player.create(name: "Evans", image: "", health: 20)
-Player.create(name: "Brooke", image: "", health: 20)
-Player.create(name: "Matt", image: "", health: 20)
+Player.create(name: "Evans", image: "https://i.imgur.com/O8VE9Rj.png", health: 20)
+Player.create(name: "Brooke", image: "https://i.imgur.com/BZfZMgL.png", health: 20)
+Player.create(name: "Matt", image: "https://i.imgur.com/c3o1LFi.png", health: 20)
 puts "seeding attack card library"
 CardLibrary.create(name: "Sean's Mighty Punch!", power: 5, effect_type: "Attack", image: "https://i.imgur.com/X487GOL.png")
 CardLibrary.create(name: "May's Insults", power: 8, effect_type: "Attack", image: "https://i.imgur.com/D8F4hXA.png")
@@ -61,9 +61,9 @@ PlayerPhrase.create(player_id: 3, phrase: "You guys are the best mod!!!", effect
 PlayerPhrase.create(player_id: 3, phrase: "GameMaker Studio 2, Give me Strength!!!", effect_type: "Heal")
 PlayerPhrase.create(player_id: 3, phrase: "Dead Rabbits Give me Power!!!", effect_type: "Heal")
 puts "seeding bosses"
-Boss.create(name: "Feral Squirrel", image: "", health: 30)
-Boss.create(name: "Mutant Fruit Fly", image: "", health: 40)
-Boss.create(name: "Sinatra", image: "", health: 50)
+Boss.create(name: "Feral Squirrel", image: "https://i.imgur.com/b52uoFR.png", health: 30)
+Boss.create(name: "Mutant Fruit Fly", image: "https://i.imgur.com/N1LhZaL.png", health: 40)
+Boss.create(name: "Sinatra", image: "https://i.imgur.com/RJWEHTR.png", health: 50)
 puts "seeding boss attack phrases"
 BossPhrase.create(boss_id: 1, phrase: "Enjoy These Claws to Your Face!!!", effect_type: "Attack", potency: 5)
 BossPhrase.create(boss_id: 1, phrase: "Rabies Laced Bite!!!", effect_type: "Attack", potency: 6)
