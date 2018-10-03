@@ -1,6 +1,6 @@
 <div class="show">
 <section>
-<%= @game.user.player.name %> <span style="color: red"> versus </span><%= @game.boss.name %><br><br>
+<%= @game.user.player.name %> <span style="color: red"> versus </span><%= @game.boss.name %><br>
 </section>
 <h2>
 <%= @game.user.player.name %>:  <%= @game.user_health %> health | <%= flash[:player_phrase] ? flash[:player_phrase] : nil %><br><br>
@@ -8,6 +8,7 @@
 <br><br><br>
 </h2>
 <%= image_tag("#{@game.boss.image}", style: "position:fixed;top:2%;left:62%;display:inline;border:0px;") %>
+<%= image_tag("#{@game.user.player.battle_image}", style: "position:fixed;bottom:0%;left:2%;display:inline;border:0px;") %>
 <p>
   <div class="deck">
 <% @game.user.hands.each do |hand| %>

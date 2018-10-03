@@ -40,6 +40,9 @@ class GamesController < ApplicationController
     # byebug
     if @game.boss_health.to_i <= 0
       @game.boss_id += 1
+      if @game.boss_id.to_i == 4
+        redirect_to #game_won and return
+      end
       @game.boss_health = Boss.find_by(id: @game.boss_id).health
       @game.bosses_defeated += 1
       @game.save
@@ -80,6 +83,10 @@ class GamesController < ApplicationController
 
   def game_over
     render :game_over
+  end
+
+  def game_won
+    render :game_won
   end
 
   private

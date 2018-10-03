@@ -10,6 +10,30 @@
       font-style: normal;
   }
 
+.continue {
+  display:inline;
+  position:fixed;
+  left:30%;
+  bottom:5%;
+  width:690px;
+  height:115px;
+  border:0px;
+  margin:0px;
+  z-index:200;
+  background: url('https://i.imgur.com/dgnA1q2.png');
+}
+
+.continue:hover {
+  width:688px;
+  height:155px;
+  bottom:2%;
+  background:url('https://i.imgur.com/NxY7uzW.png');
+}
+
+.game_over:hover {
+  opacity:0;
+}
+
 .show{
 * {
   box-sizing: border-box;
@@ -18,7 +42,7 @@
 section {
   font-family: 'ssf4';
   margin: 3%;
-  font-size: 200%;
+  font-size: 300%;
   align: top;
 }
 

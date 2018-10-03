@@ -1,7 +1,7 @@
 puts "seeding players"
-Player.create(name: "Evans", image: "https://i.imgur.com/O8VE9Rj.png", health: 20)
-Player.create(name: "Brooke", image: "https://i.imgur.com/BZfZMgL.png", health: 20)
-Player.create(name: "Matt", image: "https://i.imgur.com/c3o1LFi.png", health: 20)
+Player.create(name: "Evans", image: "https://i.imgur.com/O8VE9Rj.png", battle_image: "https://i.imgur.com/9KgqwNs.png", health: 20)
+Player.create(name: "Brooke", image: "https://i.imgur.com/BZfZMgL.png", battle_image: "https://i.imgur.com/VgkoYOa.png", health: 20)
+Player.create(name: "Matt", image: "https://i.imgur.com/c3o1LFi.png", battle_image: "https://i.imgur.com/3NHEwnP.png", health: 20)
 puts "seeding attack card library"
 CardLibrary.create(name: "Sean's Mighty Punch!", power: 5, effect_type: "Attack", image: "https://i.imgur.com/X487GOL.png")
 CardLibrary.create(name: "May's Insults", power: 8, effect_type: "Attack", image: "https://i.imgur.com/D8F4hXA.png")
