@@ -41,7 +41,7 @@ class GamesController < ApplicationController
     if @game.boss_health.to_i <= 0 #boss death condition
       @game.boss_id += 1
       if @game.boss_id.to_i == 4
-        redirect_to #game_won and return
+        redirect_to game_won_path and return
       end
       @game.boss_health = Boss.find_by(id: @game.boss_id).health
       @game.bosses_defeated += 1
