@@ -10,6 +10,13 @@
       font-style: normal;
   }
 
+.bossquote {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 37%;
+  text-align: right;
+}
+
 .press {
   display:inline;
   position:fixed;
