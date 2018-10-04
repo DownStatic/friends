@@ -13,8 +13,17 @@
 .bossquote {
   display: flex;
   justify-content: flex-end;
+  flex-direction: column;
   padding-right: 37%;
   text-align: right;
+}
+
+.attack {
+  color: red;
+}
+
+.heal {
+  color: lime;
 }
 
 .press {

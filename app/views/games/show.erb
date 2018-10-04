@@ -13,7 +13,21 @@
 <div class="player">
   <h2 style="font-family: 'Permanent Marker';font-size:250%;color:white;">
     <div class="bossquote">
-    <span style="color: white"><%= flash[:boss_phrase] ?  flash[:boss_phrase] : nil %></span> <br><br><br><br><br><br><br>
+    <span style="color: white"><%= flash[:boss_phrase] ?  flash[:boss_phrase] : nil %></span>
+    <% if flash[:boss_phrase] %>
+      <% if flash[:boss_effect] == "Attack" %>
+      <div class="attack">
+      <span style="color: red"> <%= @game.boss.name %> hit you for <%= flash[:boss_power] %>!
+      </span>
+      </div>
+      <% else %>
+      <div class="heal">
+      <span stlye="color: green"> <%= @game.boss.name %> healed for <%= flash[:boss_power] %>!
+      </span>
+      </div>
+      <% end %>
+    <% end %>
+    <br><br><br><br><br><br>
 </div>
   <%= @game.user.player.name %>: <span style="color:red"> <%= @game.user_health %> health </span><br>
   <span style="color: white"><%= flash[:player_phrase] ? flash[:player_phrase] : nil %></span<br><br><br><br>

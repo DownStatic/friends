@@ -62,6 +62,8 @@ class GamesController < ApplicationController
         @game.boss_health += @boss_action.potency.to_i
       end
       flash[:boss_phrase] = @boss_action.phrase
+      flash[:boss_effect] = @boss_action.effect_type
+      flash[:boss_power] = @boss_action.potency
       @game.save
 
       #refactor here
