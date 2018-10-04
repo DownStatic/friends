@@ -1,7 +1,7 @@
 puts "seeding players"
-Player.create(name: "Evans", image: "https://i.imgur.com/O8VE9Rj.png", battle_image: "https://i.imgur.com/9KgqwNs.png", health: 20)
-Player.create(name: "Brooke", image: "https://i.imgur.com/BZfZMgL.png", battle_image: "https://i.imgur.com/VgkoYOa.png", health: 20)
-Player.create(name: "Matt", image: "https://i.imgur.com/c3o1LFi.png", battle_image: "https://i.imgur.com/3NHEwnP.png", health: 20)
+Player.create(name: "Evans", image: "https://i.imgur.com/O8VE9Rj.png", battle_image: "https://i.imgur.com/G3fQC4j.png", health: 20)
+Player.create(name: "Brooke", image: "https://i.imgur.com/BZfZMgL.png", battle_image: "https://i.imgur.com/IpT5ZSR.png", health: 20)
+Player.create(name: "Matt", image: "https://i.imgur.com/c3o1LFi.png", battle_image: "https://i.imgur.com/wEt3AyX.png", health: 20)
 puts "seeding attack card library"
 CardLibrary.create(name: "Sean's Mighty Punch!", power: 5, effect_type: "Attack", image: "https://i.imgur.com/L6GiH8S.png")
 CardLibrary.create(name: "May's Insults", power: 8, effect_type: "Attack", image: "https://i.imgur.com/gN0274Y.png")
@@ -10,7 +10,7 @@ CardLibrary.create(name: "Dank Memes", power: 3, effect_type: "Attack", image: "
 CardLibrary.create(name: "Oh $H1T!!!", power: 10, effect_type: "Attack", image: "https://i.imgur.com/uK9v77O.png")
 CardLibrary.create(name: "Beer Pong Barrage", power: 4, effect_type: "Attack", image: "https://i.imgur.com/dTTJXEi.png")
 CardLibrary.create(name: "Call in Support from Maria", power: 7, effect_type: "Attack", image: "https://i.imgur.com/C3lrmod.png")
-CardLibrary.create(name: "Throw Wario", power: 2, effect_type: "Attack", image: "https://i.imgur.com/MbWR0Nw.png")
+CardLibrary.create(name: "Throw Waluigi", power: 2, effect_type: "Attack", image: "https://i.imgur.com/tQqVlmU.png")
 CardLibrary.create(name: "Confuse with Pokemon Trivia", power: 3, effect_type: "Attack", image: "https://i.imgur.com/cbdpy4g.png")
 CardLibrary.create(name: "Ignore Text Messages", power: 3, effect_type: "Attack", image: "https://i.imgur.com/D20Jcms.png")
 CardLibrary.create(name: "Confuse with Basketball Trivia", power: 3, effect_type: "Attack", image: "https://i.imgur.com/idVfUrS.png")
@@ -24,7 +24,7 @@ CardLibrary.create(name: "Squirrel T-shirt Armor!", power: 3, effect_type: "Heal
 CardLibrary.create(name: "Restart Your Computer", power: 2, effect_type: "Heal", image: "https://i.imgur.com/pKWwFVT.png")
 CardLibrary.create(name: "Miriam's Soothing Voice", power: 3, effect_type: "Heal", image: "https://i.imgur.com/mJZw8QG.png")
 CardLibrary.create(name: "Take a Power Nap", power: 6, effect_type: "Heal", image: "https://i.imgur.com/KYa9KIF.png")
-CardLibrary.create(name: "Jordan Tells a Joke", power: 4, effect_type: "Heal", image: "https://i.imgur.com/D9MqkF6.png")
+CardLibrary.create(name: "Jordan Tells a Joke", power: 4, effect_type: "Heal", image: "https://i.imgur.com/58O1xaj.png")
 CardLibrary.create(name: "Perfect Pour", power: 2, effect_type: "Heal", image: "https://i.imgur.com/gfLcAVz.png")
 CardLibrary.create(name: "Stream the Battle", power: 4, effect_type: "Heal", image: "https://i.imgur.com/kmH8yVE.png")
 CardLibrary.create(name: "Eat Jin Ai's Treats", power: 5, effect_type: "Heal", image: "https://i.imgur.com/llLuV41.png")

@@ -10,6 +10,27 @@
       font-style: normal;
   }
 
+.press {
+  display:inline;
+  position:fixed;
+  left:35%;
+  bottom:5%;
+  width:379px;
+  height:110px;
+  border:0px;
+  margin:0px;
+  z-index:200;
+  background: url('https://i.imgur.com/07lfNjc.png');
+}
+
+.press:hover {
+  width:368px;
+  height:155px;
+  bottom:2%;
+  background:url('https://i.imgur.com/14W4rEo.png');
+}
+
+
 .continue {
   display:inline;
   position:fixed;
@@ -42,8 +63,9 @@
 section {
   font-family: 'ssf4';
   margin: 3%;
-  font-size: 300%;
+  font-size: 425%;
   align: top;
+  text-shadow: 5px 5px 8px black;
 }
 
 body {
@@ -59,6 +81,11 @@ h2 {
   align: top;
   font-family: "Comic Sans";
   font-size: 150%;
+  text-shadow: 3px 3px 5px black;
+}
+
+span {
+  text-shadow: 3px 3px 5px black;
 }
 
 h1, h3 {
@@ -73,7 +100,21 @@ h1 {
 }
 
 h3 {
-  color: #888;
+  margin: 3%;
+  font-family: "Permanent Marker";
+  font-size: 250%;
+  color: white;
+  text-shadow: 3px 3px 5px black;
+}
+
+.player {
+}
+
+.boss {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5.5%;
+  text-align: right;
 }
 
 p {

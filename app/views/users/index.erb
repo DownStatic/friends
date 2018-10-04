@@ -1,14 +1,11 @@
-<section>
-WELCOME TO FRIENDS
-</section><br><br><br>
-<h1>It began with the forging of the Great Mod. Three repositories were given to the Elves, immortal, wisest and fairest of all beings. Seven to the Dwarf-Lords, great miners and craftsmen of the mountain halls. And nine, nine respositories were gifted to the race of Humans, who above all else desire apps. For within these repositories were bound the gems and methods to govern all tech. But they were all of them deceived, for there was another repository. Deep in the land of Silicon Valley, in the Fires of Mount Facetweet, the Dark Lord Squirrel forged a master repository, and into it he poured his cruelty, his malice and his will to dominate all apps forever.</h1><br><br>
-
-<section>
-  CHOOSE YOUR HERO
-</section><br><br>
+<div class="charselect">
+<%= image_tag("https://i.imgur.com/cRYXmuv.jpg", style: "position: absolute; border:0px;margin:0px:display:inline;top:0px;height:100%;width:100%;z-index:-10;opacity:.8;") %>
+<section class="charsel">
 <% @players.each do |player| %>
-<%= button_tag(style: "border:0px;margin:0px;background:none") do %>
-<%= link_to "", users_path(player_id: player.id), method: :post, style: "height:500px;width:500px;position:absolute;border:0px;margin:0px;background:none" %>
-<%= image_tag("#{player.image};border:0px;margin:0px;background:none") %>
+<%= button_tag(style: "border:20px;margin:0px;background:none;height:400px; width:400px;") do %>
+<%= link_to "", users_path(player_id: player.id), method: :post, style: "height:400px;width:400px;position:fixed;border:20px;margin:0px;;"  %>
+<%= image_tag("#{player.image} border:20px;margin:0px;background:none;") %>
 <% end %>
 <% end %>
+</section>
+</div>

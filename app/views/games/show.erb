@@ -1,13 +1,26 @@
 <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+<% if @game.boss_id == 3 %>
+<%= image_tag("https://i.imgur.com/E5gN1eK.gif", style: "position: absolute; border:0px;margin:0px:display:inline;top:0px;height:100%;width:100%;z-index:-10;opacity:.8;") %>
+<% elsif @game.boss_id == 2 %>
+<%= image_tag("https://i.imgur.com/qvPNZG1.jpg", style: "position: absolute; border:0px;margin:0px:display:inline;top:0px;height:100%;width:100%;z-index:-10;opacity:.9;")%>
+<% else %>
+<%= image_tag("https://i.imgur.com/GwLzS4w.jpg", style: "position: absolute; border:0px;margin:0px:display:inline;top:0px;height:100%;width:100%;z-index:-10;opacity:.9;")%>
+<% end %>
 <div class="show">
 <section>
-<%= @game.user.player.name %> <span style="color: red"> VS </span><%= @game.boss.name %><br>
+<span style="color:white"><%= @game.user.player.name %></span> <span style="color: red"> VS </span><span style="color:white"><%= @game.boss.name %><br></span>
 </section>
-<h2 style="font-family: 'Permanent Marker';font-size:200%;">
-<%= @game.user.player.name %>:  <%= @game.user_health %> health | <%= flash[:player_phrase] ? flash[:player_phrase] : nil %><br><br>
-<%= @game.boss.name %>: <%= @game.boss_health %> health | <%= flash[:boss_phrase] ? flash[:boss_phrase] : nil %> <br><br><br>
-<br><br><br>
-</h2>
+<div class="player">
+  <h2 style="font-family: 'Permanent Marker';font-size:250%;color:white;">
+  <span style="color: white"><%= flash[:boss_phrase] ?  @game.boss.name+": "+flash[:boss_phrase] : nil %></span> <br><br><br><br><br><br><br>
+  <%= @game.user.player.name %>: <span style="color:red"> <%= @game.user_health %> health </span><br>
+  <span style="color: white"><%= flash[:player_phrase] ? flash[:player_phrase] : nil %></span<br><br><br><br>
+  </h2>
+</div>
+<div class="boss">
+  <h3><br><%= @game.boss.name %>: <span style="color:red"> <%= @game.boss_health %> health </span></h3><br>
+</div>
+
 <%= image_tag("#{@game.boss.image}", style: "position:fixed;top:2%;left:62%;display:inline;border:0px;") %>
 <%= image_tag("#{@game.user.player.battle_image}", style: "position:fixed;bottom:0%;left:2%;display:inline;border:0px;") %>
 <p>

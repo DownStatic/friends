@@ -1,2 +1,8 @@
-This is the story progression screen
-<%= button_to "Press onward...", game_path(@gameid), method: :get %>
+<% if @boss.id == 2 %>
+<%= image_tag("https://i.imgur.com/AlJZWgb.jpg", style: "height:100%;width:100%;") %>
+<% elsif @boss.id == 3 %>
+<%= image_tag("https://i.imgur.com/5uso5Li.jpg", style: "height:100%;width:100%;") %>
+<% end %>
+<%= button_tag(type: "input", class: "press") do %>
+  <%= link_to "", game_path(@gameid), method: :get, style: "position:relative;left:0%;bottom:0%,width:100%;height:100%;" %>
+<% end %>
