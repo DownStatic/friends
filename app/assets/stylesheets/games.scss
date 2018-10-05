@@ -10,6 +10,16 @@
       font-style: normal;
   }
 
+.bossfade{
+  img{
+    animation: fadein 1.5s;
+  }
+}
+@keyframes fadein{
+  from {opacity:0;}
+  to {opacity:.8;}
+}
+
 .bossquote {
   display: flex;
   justify-content: flex-end;

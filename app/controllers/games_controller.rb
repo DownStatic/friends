@@ -16,6 +16,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     if @game.save
+      flash[:boss_down] = true
       redirect_to @game
     else
       flash[:errors] = @game.errors.full_messages
@@ -24,6 +25,7 @@ class GamesController < ApplicationController
   end
 
   def update
+    session[:boss_down] = false
     @game = Game.find_by(id: params[:id])
     #Logic for action resolution here
     if action_params[:effect_type] == "Attack"
