@@ -76,7 +76,7 @@ BossPhrase.create(boss_id: 2, phrase: "BBUUZZZ WING SMASH BUUZZZZ!!!", effect_ty
 BossPhrase.create(boss_id: 2, phrase: "BBUUZZZZ PINCER GRAB BBUUZZZ !!!", effect_type: "Attack", potency: 3)
 BossPhrase.create(boss_id: 2, phrase: "BBUUZZZZ GARBAGE BREATH BBUUZZZ!!!", effect_type: "Attack", potency: 3)
 BossPhrase.create(boss_id: 3, phrase: "No Method Error!!!", effect_type: "Attack", potency: 4)
-BossPhrase.create(boss_id: 3, phrase: "Sinatra Doesn't Know This Ditty!!!", effect_type: "Attack", potency: 5)
+BossPhrase.create(boss_id: 3, phrase: "Sinatra Doesn't Know This Ditty!!!", effect_type: "Attack", potency: 6)
 BossPhrase.create(boss_id: 3, phrase: "Undefined Method for Nil:NilClass!!!", effect_type: "Attack", potency: 5)
 BossPhrase.create(boss_id: 3, phrase: "Terminal Locked Bug, Good Luck Using Your Keyboard!!!", effect_type: "Attack", potency: 3)
 BossPhrase.create(boss_id: 3, phrase: "Deprecation!!!", effect_type: "Attack", potency: 2)
