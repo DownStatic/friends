@@ -11,9 +11,14 @@
 <span style="color:white"><%= @game.user.player.name %></span> <span style="color: red"> VS </span><span style="color:white"><%= @game.boss.name %><br></span>
 </section>
 <div class="player">
-  <h2 style="font-family: 'Permanent Marker';font-size:250%;color:white;">
+  <h2 style="font-family: 'Permanent Marker';font-size:250%;color:white;margin-bottom:0px;">
     <div class="bossquote">
-    <span style="color: white"><%= flash[:boss_phrase] ?  flash[:boss_phrase] : nil %></span>
+    <span style="color: white">  <% if flash[:boss_phrase] %>
+      <%= flash[:boss_phrase] %>
+      <% else %>
+      <br>
+      <% end %>
+    </span>
     <% if flash[:boss_phrase] %>
       <% if flash[:boss_effect] == "Attack" %>
       <div class="attack">
@@ -30,11 +35,17 @@
     <br><br><br><br><br><br>
 </div>
   <%= @game.user.player.name %>: <span style="color:red"> <%= @game.user_health %> health </span><br>
-  <span style="color: white"><%= flash[:player_phrase] ? flash[:player_phrase] : nil %></span<br><br><br><br>
+  <span style="color: white">
+  <% if flash[:player_phrase] %>
+  <%= flash[:player_phrase] %>
+  <% else %>
+  <br>
+  <% end %>
+  </span<br><br><br><br>
   </h2>
 </div>
 <div class="boss">
-  <h3><br><%= @game.boss.name %>: <span style="color:red"> <%= @game.boss_health %> health </span></h3><br>
+  <h3><%= @game.boss.name %>: <span style="color:red"> <%= @game.boss_health %> health </span></h3><br>
 </div>
 <% if session[:boss_down] %>
 <div class="bossfade">
